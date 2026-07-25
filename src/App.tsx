@@ -15,6 +15,7 @@ import PolicyPage from '@/pages/PolicyPage'
 import CreatorPage from '@/pages/CreatorPage'
 import RewardsPage from '@/pages/RewardsPage'
 import AdminPanel from '@/pages/AdminPanel'
+import DigitalClockPage from '@/pages/DigitalClockPage'
 import './App.css'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
               <Route path="/creator" element={<CreatorPage />} />
               <Route path="/rewards" element={<RewardsPage />} />
               <Route path="/admin" element={<AdminPanel />} />
+              <Route path="/clock" element={<DigitalClockPage />} />
             </Routes>
           </main>
           <Footer />
