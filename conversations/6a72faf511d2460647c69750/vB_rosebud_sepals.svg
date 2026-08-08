@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Central teardrop petal -->
+  <path d="M12 2.5C8.8 7 8.5 12 12 20C15.5 12 15.2 7 12 2.5Z" />
+  <!-- Left wrapping petal -->
+  <path d="M12 20C7.5 18 3.5 13.5 3.5 9.5C3.5 6 6.5 4.8 9 6C10.5 6.8 11.5 8.3 12 10.2" />
+  <!-- Right wrapping petal -->
+  <path d="M12 20C16.5 18 20.5 13.5 20.5 9.5C20.5 6 17.5 4.8 15 6C13.5 6.8 12.5 8.3 12 10.2" />
+  <!-- Curved Base Sepals -->
+  <path d="M8 21.5C10 22.5 14 22.5 16 21.5" />
+  <!-- Stem line -->
+  <path d="M12 20V12" />
+</svg>

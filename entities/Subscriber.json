@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "discountCode": {
+      "type": "string"
+    },
+    "discountPercent": {
+      "type": "number",
+      "default": 15
+    },
+    "email": {
+      "type": "string"
+    },
+    "emailed": {
+      "type": "boolean",
+      "default": false
+    },
+    "source": {
+      "type": "string",
+      "default": "popup"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "Subscriber"
+}

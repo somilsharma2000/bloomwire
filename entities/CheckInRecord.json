@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "checkInDate": {
+      "type": "string"
+    },
+    "petalsAwarded": {
+      "type": "number"
+    },
+    "streakDay": {
+      "type": "number"
+    },
+    "userEmail": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "CheckInRecord"
+}

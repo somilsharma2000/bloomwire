@@ -1,0 +1,73 @@
+{
+  "properties": {
+    "badges": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "image": {
+      "type": "string"
+    },
+    "images": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "longDescription": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "originalPrice": {
+      "type": "number"
+    },
+    "petalsEarned": {
+      "type": "number"
+    },
+    "price": {
+      "type": "number"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "reviewCount": {
+      "type": "number"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "stock": {
+      "type": "number"
+    },
+    "subcategory": {
+      "type": "string"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "Product"
+}

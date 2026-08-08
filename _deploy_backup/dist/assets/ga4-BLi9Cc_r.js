@@ -1,0 +1,1 @@
+function e(e,t){typeof window<`u`&&window.gtag&&window.gtag(`event`,e,t||{})}function t(t,n,r=1){e(`add_to_cart`,{items:[{name:t,price:n,quantity:r}],value:n*r,currency:`INR`})}function n(t,n,r){e(`purchase`,{transaction_id:t,value:n,currency:`INR`,items:r})}function r(t){e(`referral_link_click`,{referral_code:t})}export{n,r,t};

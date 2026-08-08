@@ -1,0 +1,44 @@
+{
+  "name": "Bloomwire Sheets Sync",
+  "description": "Syncs new Bloomwire users and orders from Supabase to a live Google Sheet every 5 minutes.",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "interval",
+      "cron_expression": null,
+      "one_time_date": null,
+      "timezone": "UTC",
+      "interval_value": 5,
+      "interval_unit": "minutes",
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "bloomwire_sheets_sync",
+      "version": "2.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "sync_data": {
+          "call": "invoke_superagent_step",
+          "with": {
+            "message": "BLOOMWIRE SHEETS SYNC TASK\n\nSync new users and orders from Supabase to Google Sheets. Steps:\n1. Get a fresh Google Sheets token: call get_connector_token(integration_type='googlesheets', required_scopes=['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive.file'])\n2. Read new users from the last 5 minutes using the SUPABASE_SERVICE_KEY env var directly: curl -s -H \"apikey: $SUPABASE_SERVICE_KEY\" -H \"Authorization: Bearer $SUPABASE_SERVICE_KEY\" 'https://kvumxwxthwfzhgxuxwzr.supabase.co/rest/v1/users?created_at=gte.{5_minutes_ago_iso}&select=id,name,email,phone,petals_balance,referral_code,referred_by,created_at&order=created_at.asc'\n3. Read new orders: curl -s -H \"apikey: $SUPABASE_SERVICE_KEY\" -H \"Authorization: Bearer $SUPABASE_SERVICE_KEY\" 'https://kvumxwxthwfzhgxuxwzr.supabase.co/rest/v1/orders?created_at=gte.{5_minutes_ago_iso}&select=id,user_email,total,payment_method,status,items,created_at&order=created_at.asc'\n4. If new users found, append them to the Users tab of the Google Sheet (ID: 1gHguy2HEoB5LC6oIibij-RjQ8luu1Px-QmHqaYvPVDI). Use curl POST to https://sheets.googleapis.com/v4/spreadsheets/1gHguy2HEoB5LC6oIibij-RjQ8luu1Px-QmHqaYvPVDI/values/Users:append?valueInputOption=RAW with Authorization: Bearer $GOOGLESHEETS_ACCESS_TOKEN and body {\"values\": [[...]]}\n5. If new orders found, append them to the Orders tab similarly.\n6. Report: 'Synced N new users and N new orders.' or 'No new data to sync.'\n\nIMPORTANT: Use $SUPABASE_SERVICE_KEY from the environment directly \u2014 do NOT call get_connector_token for supabase. The key is already available as an environment variable."
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Sync Supabase to Google Sheets",
+            "description": "Fetch new users/orders and append to Sheet"
+          }
+        }
+      }
+    ]
+  }
+}

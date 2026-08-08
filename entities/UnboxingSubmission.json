@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "caption": {
+      "type": "string"
+    },
+    "mediaType": {
+      "type": "string"
+    },
+    "mediaUrl": {
+      "type": "string"
+    },
+    "petalsAwarded": {
+      "type": "boolean"
+    },
+    "reviewedDate": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "UnboxingSubmission"
+}

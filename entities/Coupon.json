@@ -1,0 +1,75 @@
+{
+  "properties": {
+    "applicableCategories": {
+      "type": "array"
+    },
+    "applicableProducts": {
+      "type": "array"
+    },
+    "autoApply": {
+      "type": "boolean"
+    },
+    "code": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "discountType": {
+      "enum": [
+        "percentage",
+        "flat"
+      ],
+      "type": "string"
+    },
+    "discountValue": {
+      "type": "number"
+    },
+    "endDate": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "maxUses": {
+      "type": "number"
+    },
+    "minOrderValue": {
+      "type": "number"
+    },
+    "perUserLimit": {
+      "type": "number"
+    },
+    "startDate": {
+      "type": "string"
+    },
+    "stackable": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "inactive",
+        "expired"
+      ],
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "totalUsed": {
+      "type": "number"
+    },
+    "validFor": {
+      "enum": [
+        "all",
+        "first_order",
+        "specific_user"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "Coupon"
+}

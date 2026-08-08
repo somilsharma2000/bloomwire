@@ -1,0 +1,88 @@
+{
+  "name": "Order",
+  "properties": {
+    "donationAmount": {
+      "description": "2% of order total donated to Dog Home Foundation",
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "properties": {
+          "image": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "paymentId": {
+      "type": "string"
+    },
+    "paymentMethod": {
+      "type": "string"
+    },
+    "petalsEarned": {
+      "type": "number"
+    },
+    "shippingAddress": {
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "pincode": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "confirmed",
+        "shipped",
+        "delivered",
+        "cancelled"
+      ],
+      "type": "string"
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "trackingNumber": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "string"
+    }
+  },
+  "required": [],
+  "type": "object"
+}

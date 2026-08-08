@@ -1,0 +1,37 @@
+{
+  "properties": {
+    "items": {
+      "type": "array"
+    },
+    "petalsEarned": {
+      "type": "number"
+    },
+    "paymentId": {
+      "type": "string"
+    },
+    "paymentMethod": {
+      "type": "string"
+    },
+    "shippingAddress": {
+      "type": "object"
+    },
+    "status": {
+      "type": "string"
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "trackingNumber": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "StoreOrder"
+}

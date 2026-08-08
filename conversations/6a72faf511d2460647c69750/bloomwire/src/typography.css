@@ -1,0 +1,15 @@
+:root {
+  --fw-heading: 700;
+  --fw-subheading: 500;
+  --fw-body: 400;
+  --fw-button: 500;
+  --fw-caption: 400;
+}
+
+@layer utilities {
+  .font-heading { font-weight: var(--fw-heading); }
+  .font-subheading { font-weight: var(--fw-subheading); }
+  .font-body { font-weight: var(--fw-body); }
+  .font-btn { font-weight: var(--fw-button); }
+  .font-caption { font-weight: var(--fw-caption); }
+}

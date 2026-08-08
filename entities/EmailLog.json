@@ -1,0 +1,43 @@
+{
+  "properties": {
+    "entityId": {
+      "type": "string"
+    },
+    "recipient": {
+      "type": "string"
+    },
+    "sentAt": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "sent",
+        "failed",
+        "pending"
+      ],
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "welcome",
+        "review_request",
+        "abandoned_cart",
+        "petals_expiry",
+        "shipping_notification",
+        "birthday",
+        "anniversary",
+        "festive",
+        "discount_code",
+        "order_confirmation",
+        "custom"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "EmailLog"
+}

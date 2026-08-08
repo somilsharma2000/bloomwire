@@ -1,0 +1,49 @@
+{
+  "properties": {
+    "createdAt": {
+      "type": "string"
+    },
+    "drawDate": {
+      "type": "string"
+    },
+    "drawTime": {
+      "type": "string"
+    },
+    "eligibleEntries": {
+      "type": "number"
+    },
+    "entriesPerUser": {
+      "type": "number"
+    },
+    "entryRuleAmount": {
+      "type": "number"
+    },
+    "freeEntryMethod": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "prizes": {
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "scheduled",
+        "completed",
+        "cancelled"
+      ],
+      "type": "string"
+    },
+    "totalEntries": {
+      "type": "number"
+    },
+    "winners": {
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "Raffle"
+}

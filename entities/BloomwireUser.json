@@ -1,0 +1,67 @@
+{
+  "properties": {
+    "checkInStreak": {
+      "type": "number"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "lastCheckIn": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "orderCount": {
+      "type": "number"
+    },
+    "pendingPetals": {
+      "type": "number"
+    },
+    "petalsBalance": {
+      "type": "number"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "referredBy": {
+      "type": "string"
+    },
+    "referralCode": {
+      "type": "string"
+    },
+    "role": {
+      "enum": [
+        "user",
+        "admin"
+      ],
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "suspended",
+        "banned"
+      ],
+      "type": "string"
+    },
+    "totalSpent": {
+      "type": "number"
+    },
+    "unlockedRewards": {
+      "type": "array"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "usedCoupons": {
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "BloomwireUser"
+}

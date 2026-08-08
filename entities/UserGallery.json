@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "caption": {
+      "type": "string"
+    },
+    "isPublic": {
+      "type": "boolean"
+    },
+    "mediaType": {
+      "type": "string"
+    },
+    "mediaUrl": {
+      "type": "string"
+    },
+    "submissionId": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "UserGallery"
+}

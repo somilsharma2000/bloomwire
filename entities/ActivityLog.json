@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "action": {
+      "type": "string"
+    },
+    "adminEmail": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    },
+    "entityId": {
+      "type": "string"
+    },
+    "entityType": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "ActivityLog"
+}

@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "amount": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "orderId": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "earn",
+        "spend"
+      ],
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "PetalsTransaction"
+}

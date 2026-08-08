@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bloomwire</title>
+    <script>
+      // Redirect all deep paths to hash format for HashRouter on GitHub Pages
+      var pathSegmentsToKeep = 1; // /bloomwire/ prefix
+      var l = window.location;
+      var basePath = l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/';
+      var subPath = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/');
+      // Redirect to /bloomwire/#/subPath
+      l.replace(basePath + '#' + (subPath ? '/' + subPath : '/') + l.search);
+    </script>
+  </head>
+  <body></body>
+</html>

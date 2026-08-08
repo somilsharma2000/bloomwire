@@ -1,0 +1,52 @@
+{
+  "properties": {
+    "author": {
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "Crafting",
+        "Behind the Scenes",
+        "Care Tips",
+        "Gifting",
+        "Decor Ideas",
+        "Community"
+      ],
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "featuredImage": {
+      "type": "string"
+    },
+    "publishedAt": {
+      "type": "string"
+    },
+    "readTime": {
+      "type": "number"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "published"
+      ],
+      "type": "string"
+    },
+    "tags": {
+      "type": "array"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "BlogPost"
+}

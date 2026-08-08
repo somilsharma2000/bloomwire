@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "Category"
+}

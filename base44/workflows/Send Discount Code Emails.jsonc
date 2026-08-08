@@ -1,0 +1,44 @@
+{
+  "name": "Send Discount Code Emails",
+  "description": "Checks Supabase for new unemailed discount code subscribers every 5 minutes and sends them their code via Gmail.",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "interval",
+      "cron_expression": null,
+      "one_time_date": null,
+      "timezone": "UTC",
+      "interval_value": 5,
+      "interval_unit": "minutes",
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "bloomwire_subscription_emails",
+      "version": "2.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "send_emails": {
+          "call": "invoke_superagent_step",
+          "with": {
+            "message": "BLOOMWIRE SUBSCRIPTION EMAIL TASK\n\nCheck Supabase for new unemailed discount code subscribers and send them their code via Gmail.\n\nSteps:\n1. Query unemailed subscribers using $SUPABASE_SERVICE_KEY from the environment: curl -s -H \"apikey: $SUPABASE_SERVICE_KEY\" -H \"Authorization: Bearer $SUPABASE_SERVICE_KEY\" 'https://kvumxwxthwfzhgxuxwzr.supabase.co/rest/v1/subscribers?emailed=eq.false&select=id,email,discount_code,discount_percent'\n2. If no unemailed subscribers found, report: 'No new unemailed Bloomwire discount-code subscribers, so 0 emails were sent.'\n3. For each subscriber, send a discount code email via Gmail: call get_connector_token(integration_type='gmail', required_scopes=['https://www.googleapis.com/auth/gmail.send']) then use curl POST to https://gmail.googleapis.com/gmail/v1/users/me/messages/send with Authorization: Bearer $GMAIL_ACCESS_TOKEN and a base64-encoded RFC2822 message body.\n4. Email template: Subject 'Your 15% Bloomwire Discount Code Inside! \ud83c\udf38'. Body should greet them, give their code ({discount_code}) for {discount_percent}% off, mention it's valid for first order only, and include a link to https://somilsharma2000.github.io/bloomwire/#/shop\n5. After each successful send, mark the subscriber as emailed: curl -s -X PATCH -H \"apikey: $SUPABASE_SERVICE_KEY\" -H \"Authorization: Bearer $SUPABASE_SERVICE_KEY\" -H \"Content-Type: application/json\" -H \"Prefer: return=minimal\" 'https://kvumxwxthwfzhgxuxwzr.supabase.co/rest/v1/subscribers?id=eq.{id}' -d '{\"emailed\": true}'\n6. Report: 'Sent N discount emails to new Bloomwire subscribers.'\n\nIMPORTANT: Use $SUPABASE_SERVICE_KEY from the environment directly \u2014 do NOT call get_connector_token for supabase. The key is already available as an environment variable."
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Send Discount Emails",
+            "description": "Email unemailed subscribers their codes"
+          }
+        }
+      }
+    ]
+  }
+}

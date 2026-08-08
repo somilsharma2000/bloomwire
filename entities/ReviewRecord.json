@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "productId": {
+      "type": "string"
+    },
+    "reviewedAt": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "ReviewRecord"
+}

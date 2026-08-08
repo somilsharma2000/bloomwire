@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "comment": {
+      "type": "string"
+    },
+    "images": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "productId": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "title": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "verified": {
+      "type": "boolean"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "Review"
+}

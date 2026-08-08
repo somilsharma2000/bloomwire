@@ -1,0 +1,44 @@
+{
+  "name": "Wishlist Reminder Digest",
+  "description": "Weekly Monday reminder to check wishlist activity and compose follow-up messaging for customers who have saved items but haven't purchased yet.",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 9 * * 1",
+      "one_time_date": null,
+      "timezone": "Asia/Calcutta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "wishlist_reminder_digest",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "compose_reminder": {
+          "call": "invoke_superagent_step",
+          "with": {
+            "message": "Weekly Wishlist Reminder Digest\n\nThis is your scheduled Monday morning reminder to follow up on Bloomwire wishlist activity. Here's your action plan:\n\n1. Check if any customers have saved products to their wishlist but haven't made a purchase in the last 7 days.\n2. Consider sending a personalized message to those customers offering a small discount (5-10%) or free shipping to convert their wishlist into an order.\n3. If any wishlist items are running low on stock, flag those for urgency messaging.\n4. Compose a short, warm follow-up message template that could be sent to wishlist holders.\n\nKeep the message on-brand for Bloomwire: warm, premium, and focused on the handcrafted chenille flower quality. Reference the DLX delivery tier as an upsell option.\n\nSend the digest to Somil via broadcast_message."
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Compose wishlist reminder",
+            "description": "Weekly Monday 9am IST reminder"
+          }
+        }
+      }
+    ]
+  }
+}

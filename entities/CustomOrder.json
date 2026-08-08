@@ -1,0 +1,60 @@
+{
+  "properties": {
+    "acceptedQuote": {
+      "type": "number"
+    },
+    "budget": {
+      "type": "number"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "customerEmail": {
+      "type": "string"
+    },
+    "customerName": {
+      "type": "string"
+    },
+    "customerPhone": {
+      "type": "string"
+    },
+    "deadline": {
+      "type": "string"
+    },
+    "occasion": {
+      "type": "string"
+    },
+    "productType": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "quoteAmount": {
+      "type": "number"
+    },
+    "quoteMessage": {
+      "type": "string"
+    },
+    "quoteTimeline": {
+      "type": "number"
+    },
+    "rejectionReason": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "new",
+        "quoted",
+        "accepted",
+        "in_progress",
+        "completed",
+        "rejected"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "CustomOrder"
+}

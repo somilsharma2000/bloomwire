@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "couponCode": {
+      "type": "string"
+    },
+    "orderId": {
+      "type": "string"
+    },
+    "usedAt": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "CouponUsage"
+}

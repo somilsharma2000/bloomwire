@@ -1,0 +1,48 @@
+{
+  "properties": {
+    "balance": {
+      "type": "number"
+    },
+    "buyerEmail": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "expiryDate": {
+      "type": "string"
+    },
+    "giftMessage": {
+      "type": "string"
+    },
+    "recipientEmail": {
+      "type": "string"
+    },
+    "recipientName": {
+      "type": "string"
+    },
+    "redeemed": {
+      "type": "boolean"
+    },
+    "redeemedAt": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "redeemed",
+        "expired"
+      ],
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    }
+  },
+  "type": "object",
+  "required": [],
+  "name": "GiftCard"
+}
